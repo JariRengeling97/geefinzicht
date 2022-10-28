@@ -57,7 +57,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'primary_navigation' => __('Hoofdmenu', 'sage'),
     ]);
 
     /**
@@ -133,4 +133,16 @@ add_action('widgets_init', function () {
         'name' => __('Footer', 'sage'),
         'id' => 'sidebar-footer',
     ] + $config);
+});
+
+/**
+ * ACF options page
+ */
+
+add_action('init', function() {
+  if(function_exists('acf_add_options_page') ) {
+    acf_add_options_page([
+      'page_title' => 'Thema instellingen',
+    ]);
+  }
 });

@@ -1,3 +1,22 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Primary nav */
+.primary-nav ul li {
+  padding: 10px;
+}
+
+.primary-nav ul li:nth-child(even) {
+  background-color: #ededed;
+}
+
+/* Desktop primary nav */
+.desktop-primary-nav ul li {
+  display: inline;
+  padding-right: 50px;
+}
+
+.desktop-primary-nav ul li a {
+  font-weight: 600;
+}

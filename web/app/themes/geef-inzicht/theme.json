@@ -1133,6 +1133,16 @@
           "name": "Rose 900",
           "slug": "rose-900",
           "color": "#881337"
+        },
+        {
+          "name": "Primary",
+          "slug": "primary",
+          "color": "#d59cd5"
+        },
+        {
+          "name": "Secondary",
+          "slug": "secondary",
+          "color": "#53c4c8"
         }
       ]
     },
