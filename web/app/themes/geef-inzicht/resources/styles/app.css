@@ -2,7 +2,24 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Primary nav */
+/* MAIN */
+
+/* FONTS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.75rem;
+}
+
+P {
+  margin-bottom: 0.75rem;
+  color: #5e5e5e;
+}
+
+/* PRIMARY NAV */
 .primary-nav ul li {
   padding: 10px;
 }
@@ -11,7 +28,7 @@
   background-color: #ededed;
 }
 
-/* Desktop primary nav */
+/* DESKTOP PRIMARY NAV */
 .desktop-primary-nav ul li {
   display: inline;
   padding-right: 50px;

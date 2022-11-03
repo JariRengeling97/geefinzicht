@@ -1,4 +1,4 @@
-<section class="header shadow-md py-2 lg:py-5">
+<section class="header shadow-md py-2 lg:py-5 mb-5 xl:mb-10 sticky top-0 z-50 bg-white">
   <div class="container">
     <div class="flex justify-between items-center">
       <div>

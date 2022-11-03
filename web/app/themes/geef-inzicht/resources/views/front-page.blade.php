@@ -3,6 +3,9 @@
 @section('content')
   @while(have_posts()) @php(the_post())
     @include('sections.front-attention')
-    @includeFirst(['partials.content-page', 'partials.content'])
+    @include('sections.recent-experts')
+    @include('sections.chatbot-banner')
+    @include('sections.recent-blogs')
+    {{-- @includeFirst(['partials.content-page', 'partials.content']) --}}
   @endwhile
 @endsection
