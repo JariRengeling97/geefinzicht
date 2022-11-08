@@ -13,5 +13,8 @@ module.exports = {
       }, // Extend Tailwind's default colors
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-debug-screens"),
+    require("@tailwindcss/forms"),
+  ],
 };

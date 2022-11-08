@@ -1,4 +1,4 @@
-<div class="object-cover overflow-hidden object-center py-2 lg:py-4">
+<div class="object-cover overflow-hidden object-center pt-2 lg:pt-4">
   <img src="/app/uploads/2022/11/pexels-tamara-velazquez-5199158-scaled.jpg" class="h-80 w-full object-cover rounded-md">
   <div class="flex justify-between items-center mt-3">
     <div>
@@ -9,6 +9,6 @@
     </div>
   </div>
   <div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in est commodo, varius ligula non, molestie ligula. Praesent mollis enim leo, sed imperdiet metus mattis ut.</p>
+    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in est commodo, varius ligula non, molestie ligula. Praesent mollis enim leo, sed imperdiet metus mattis ut.</p>
   </div>
 </div>

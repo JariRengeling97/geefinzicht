@@ -6,7 +6,7 @@
     <?php wp_head(); ?>
   </head>
 
-  <body <?php body_class(); ?>>
+  <body <?php body_class('debug-screens'); ?>>
     <?php wp_body_open(); ?>
     <?php do_action('get_header'); ?>
 
