@@ -23,4 +23,11 @@ $(document).ready(function () {
   $(document).on("click", ".hamburger", function (e) {
     $(".primary-nav").toggleClass("hidden");
   });
+
+  // Open filter
+  $(document).on("click", ".filter-btn", function (e) {
+    console.log("test");
+    console.log($(this).closest("h3").find(".filters"));
+    $(this).prev().next(".filters").toggleClass("hidden");
+  });
 });
