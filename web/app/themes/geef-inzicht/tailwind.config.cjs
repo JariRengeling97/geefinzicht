@@ -8,8 +8,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#d59cd5",
+        primary: "#FF69B4",
         secondary: "#53c4c8",
+        orange: "#ffa500"
       }, // Extend Tailwind's default colors
     },
   },

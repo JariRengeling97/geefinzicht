@@ -26,8 +26,16 @@ $(document).ready(function () {
 
   // Open filter
   $(document).on("click", ".filter-btn", function (e) {
-    console.log("test");
-    console.log($(this).closest("h3").find(".filters"));
-    $(this).prev().next(".filters").toggleClass("hidden");
+    $(this).closest("h3").next(".filters").toggleClass("hidden");
+    $(this).find(".ml-6").find(".minus").toggleClass("hidden");
+    $(this).find(".ml-6").find(".plus").toggleClass("hidden");
+  });
+
+  $(".search-expert").click(function() {
+    var val = $('#expertises').val();
+
+    if(val != '#') {
+      window.location.href = val;
+    }
   });
 });

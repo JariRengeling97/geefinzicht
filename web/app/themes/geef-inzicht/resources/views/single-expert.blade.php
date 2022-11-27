@@ -10,53 +10,67 @@
       <div class="flex pt-3">
         <div class="w-4/12 pr-14 relative z-10 -mt-5">
           <div>
-            <img src="/app/uploads/2022/11/pexels-italo-melo-2379004.jpg" alt="" class="aspect-square rounded-full object-cover shadow-sm">
+            <img src="{!! get_the_post_thumbnail_url(); !!}" alt="" class="aspect-square rounded-full object-cover shadow-sm">
           </div>
           <div class="pt-5">
             <small class="text-black font-bold text-xs">VERLEENT HULP BIJ</small>
-            <p class="text-black mb-0">Rugpijn, Voetpijn</p>
+            <p class="text-black mb-0"> 
+              <?php
+                $expertise_count = count(get_field('expertise'));
+                foreach(get_field('expertise') as $expertise) {
+                  echo $expertise['name'];
+                  if( $expertise_count > 1) echo ', '; 
+                  $expertise_count--;
+                }
+              ?>
+            </p>
           </div>
           <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
           <div class="pt-3">
             <small class="text-black font-bold text-xs">WACHTTIJD VOOR AFSPRAAK</small>
-            <p class="text-black mb-0">2/3 werkdagen</p>
+            <p class="text-black mb-0">{!! get_field('wait_time_for_appointemnt'); !!}</p>
           </div>
           <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
           <div class="pt-3">
             <small class="text-black font-bold text-xs">TYPE</small>
-            <p class="text-black mb-0">Fysiek</p>
+            <p class="text-black mb-0">{!! get_field('type'); !!}</p>
+          </div>
+          <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
+          <div class="pt-3">
+            <small class="text-black font-bold text-xs">Online/offline</small>
+            <p class="text-black mb-0">{!! get_field('online_offline'); !!}</p>
           </div>
           <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
           <div class="pt-3">
             <small class="text-black font-bold text-xs">Verzekerd</small>
-            <p class="text-black mb-0">Ja</p>
+            <p class="text-black mb-0">{!! get_field('insured'); !!}</p>
           </div>
           <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
           <div class="pt-3">
             <small class="text-black font-bold text-xs">Locatie</small>
-            <p class="text-black mb-0">Online</p>
+            <p class="text-black mb-0">{!! get_field('place'); !!}</p>
           </div>
           <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
           <div class="pt-3">
             <small class="text-black font-bold text-xs">Provincie</small>
-            <p class="text-black mb-0">Gelderland</p>
+            <p class="text-black mb-0">{!! get_field('province'); !!}</p>
           </div>
           <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
           <div class="pt-3">
             <small class="text-black font-bold text-xs">Beschikbaarheid locatie</small>
-            <p class="text-black mb-0">Gratis parkeren, OV, Dichtbij tankstation</p>
+            <p class="text-black mb-0">{!! get_field('availability_location'); !!}</p>
           </div>
         </div>
         <div class="w-8/12">
           <div class="flex justify-between">
             <div class="bg-primary p-10 rounded-md -ml-[28%] pl-[281px]">
-              <h1 class="text-3xl lg:text-4xl font-bold mb-0 text-white">Jari Rengeling</h1>
+              <h1 class="text-3xl lg:text-4xl font-bold mb-0 text-white">{!! the_title() !!}</h1>
               <div>
-                <span class="italic text-white font-medium">"Hier komt de quote van een expert"</span>
+                <span class="italic text-white font-medium">"{!! get_field('quote'); !!}"</span>
               </div>
             </div>
             <div>
-              <a href="" class="py-1.5 px-6 bg-secondary border-secondary border-2 rounded-md text-white inline-block font-semibold hover:bg-transparent hover:text-secondary transition-all">Website expert
+              <a href="{!! get_field('website')['url']; !!}" target="_blank" class="py-1.5 px-6 bg-secondary border-secondary border-2 rounded-md text-white inline-block font-semibold hover:bg-transparent hover:text-secondary transition-all">Website expert
               </a>
             </div>
           </div>
@@ -66,17 +80,12 @@
           <div class="pt-12">
             <h2 class="text-xl lg:text-2xl font-medium">Expertises</h2>
             <div class="flex">
-              <div class="bg-secondary p-5 text-white rounded-md">
-                <span class="uppercase font-bold block">Rugpijn</span>
-                <p class="mb-0 text-white">Binnen 6 uur reactie</p>
-              </div>
-              <div>
-                <div class="w-[1px] h-full bg-[#ededed] mx-6 block"></div>
-              </div>
-              <div class="bg-secondary p-5 text-white rounded-md">
-                <span class="uppercase font-bold block">Voetpijn</span>
-                <p class="mb-0 text-white">Binnen 6 uur reactie</p>
-              </div>
+              @foreach (get_field('expertise') as $expertise)
+                <div class="bg-secondary p-5 mr-6 text-white rounded-md">
+                  <span class="uppercase font-bold block">{!! $expertise['name'] !!}</span>
+                  <p class="mb-0 text-white">Binnen {!! $expertise['response_time'] !!} reactie</p>
+                </div>
+              @endforeach
             </div>
           </div>
           <div class="pt-12">
@@ -84,7 +93,7 @@
           </div>
           <div class="pt-12">
             <h2 class="text-xl lg:text-2xl font-medium">Omschrijving</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis maiores, dolorem officiis ipsum est magnam assumenda consequuntur dolore animi alias suscipit corporis inventore nihil facere culpa exercitationem aut! Qui, odit!</p>
+            <p>{!! the_content(); !!}</p>
           </div>
           <div class="pt-12">
             <div class="h-[1px] bg-[#ededed] w-full block"></div>
@@ -106,29 +115,20 @@
                           </th>
                       </tr>
                   </thead>
-                  <tbody>
-                      <tr class="bg-white border-bhover:bg-gray-50 ">
+                  <tbody class="expertise-table">
+                      @foreach (get_field('expertise') as $expertise)
+                        <tr class="border-bhover:bg-gray-50">
                           <th scope="row" class="py-4 px-6 whitespace-nowrap font-normal">
-                              Rugpijn
+                            {!! $expertise['name'] !!}
                           </th>
                           <td class="py-4 px-6">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis officiis voluptas possimus laudantium fuga rem asperiores, perferendis reprehenderit enim beatae et illum animi odio veniam quibusdam suscipit eius nam obcaecati.
+                            {!! $expertise['description'] !!}
                           </td>
                           <td class="py-4 px-6 min-w-[150px]">
-                            €75,- p/u
+                            €{!! $expertise['price'] !!},- p/u
                           </td>
                       </tr>
-                      <tr class="bg-gray-50">
-                        <th scope="row" class="py-4 px-6 whitespace-nowrap font-normal">
-                            Voetpijn
-                        </th>
-                        <td class="py-4 px-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis sapiente recusandae repudiandae possimus sunt dignissimos mollitia nostrum dolores, voluptate ipsum, aliquam saepe amet voluptates assumenda earum velit dolore nulla molestiae?
-                        </td>
-                        <td class="py-4 px-6">
-                          €95,- p/u
-                        </td>
-                    </tr>
+                      @endforeach
                   </tbody>
               </table>
             </div>
@@ -146,15 +146,11 @@
           <div class="pt-12">
             <h2 class="text-xl lg:text-2xl font-medium">Impressie</h2>
             <div class="grid grid-cols-3 gap-8">
-              <div>
-                <img src="/app/uploads/2022/11/pexels-olga-1146242.jpg" class="h-60 w-full object-cover rounded-md">
-              </div>
-              <div>
-                <img src="/app/uploads/2022/11/pexels-quang-anh-ha-nguyen-884977.jpg" class="h-60 w-full object-cover rounded-md">
-              </div>
-              <div>
-                <img src="/app/uploads/2022/11/pexels-julian-jagtenberg-103123.jpg" class="h-60 w-full object-cover rounded-md">
-              </div>
+              @foreach (get_field('impression') as $image)
+                <div>
+                  <img src="{!! $image['impression_image'] !!}" class="h-60 w-full object-cover rounded-md">
+                </div>
+              @endforeach
             </div>
           </div>
         </div>

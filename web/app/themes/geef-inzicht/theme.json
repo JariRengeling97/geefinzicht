@@ -335,54 +335,9 @@
           "color": "#7f1d1d"
         },
         {
-          "name": "Orange 50",
-          "slug": "orange-50",
-          "color": "#fff7ed"
-        },
-        {
-          "name": "Orange 100",
-          "slug": "orange-100",
-          "color": "#ffedd5"
-        },
-        {
-          "name": "Orange 200",
-          "slug": "orange-200",
-          "color": "#fed7aa"
-        },
-        {
-          "name": "Orange 300",
-          "slug": "orange-300",
-          "color": "#fdba74"
-        },
-        {
-          "name": "Orange 400",
-          "slug": "orange-400",
-          "color": "#fb923c"
-        },
-        {
-          "name": "Orange 500",
-          "slug": "orange-500",
-          "color": "#f97316"
-        },
-        {
-          "name": "Orange 600",
-          "slug": "orange-600",
-          "color": "#ea580c"
-        },
-        {
-          "name": "Orange 700",
-          "slug": "orange-700",
-          "color": "#c2410c"
-        },
-        {
-          "name": "Orange 800",
-          "slug": "orange-800",
-          "color": "#9a3412"
-        },
-        {
-          "name": "Orange 900",
-          "slug": "orange-900",
-          "color": "#7c2d12"
+          "name": "Orange",
+          "slug": "orange",
+          "color": "#ffa500"
         },
         {
           "name": "Amber 50",
@@ -1137,7 +1092,7 @@
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#d59cd5"
+          "color": "#ff69b4"
         },
         {
           "name": "Secondary",
