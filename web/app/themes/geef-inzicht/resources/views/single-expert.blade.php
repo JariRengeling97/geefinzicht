@@ -10,17 +10,23 @@
       <div class="flex pt-3">
         <div class="w-4/12 pr-14 relative z-10 -mt-5">
           <div>
-            <img src="{!! get_the_post_thumbnail_url(); !!}" alt="" class="aspect-square rounded-full object-cover shadow-sm">
+            @if (get_the_post_thumbnail_url())
+              <img src="{!! get_the_post_thumbnail_url(); !!}" alt="" class="aspect-square rounded-full object-cover shadow-sm">
+            @else
+              <img src="@asset('images/placeholder-profile.jpg')" alt="" class="aspect-square rounded-full object-cover shadow-sm">
+            @endif
           </div>
           <div class="pt-5">
             <small class="text-black font-bold text-xs">VERLEENT HULP BIJ</small>
             <p class="text-black mb-0"> 
               <?php
-                $expertise_count = count(get_field('expertise'));
-                foreach(get_field('expertise') as $expertise) {
-                  echo $expertise['name'];
-                  if( $expertise_count > 1) echo ', '; 
-                  $expertise_count--;
+                if(get_field('expertise')) {
+                  $expertise_count = count(get_field('expertise'));
+                  foreach(get_field('expertise') as $expertise) {
+                    echo $expertise['name'];
+                    if( $expertise_count > 1) echo ', '; 
+                    $expertise_count--;
+                  }
                 }
               ?>
             </p>
@@ -70,8 +76,9 @@
               </div>
             </div>
             <div>
-              <a href="{!! get_field('website')['url']; !!}" target="_blank" class="py-1.5 px-6 bg-secondary border-secondary border-2 rounded-md text-white inline-block font-semibold hover:bg-transparent hover:text-secondary transition-all">Website expert
-              </a>
+              @if (get_field('website'))
+                <a href="{!! get_field('website')['url']; !!}" target="_blank" class="py-1.5 px-6 bg-secondary border-secondary border-2 rounded-md text-white inline-block font-semibold hover:bg-transparent hover:text-secondary transition-all">Website expert</a>
+              @endif
             </div>
           </div>
           <div class="pt-12">
@@ -80,12 +87,14 @@
           <div class="pt-12">
             <h2 class="text-xl lg:text-2xl font-medium">Expertises</h2>
             <div class="flex">
-              @foreach (get_field('expertise') as $expertise)
-                <div class="bg-secondary p-5 mr-6 text-white rounded-md">
-                  <span class="uppercase font-bold block">{!! $expertise['name'] !!}</span>
-                  <p class="mb-0 text-white">Binnen {!! $expertise['response_time'] !!} reactie</p>
-                </div>
-              @endforeach
+              @if (get_field('expertise'))
+                @foreach (get_field('expertise') as $expertise)
+                  <div class="bg-secondary p-5 mr-6 text-white rounded-md">
+                    <span class="uppercase font-bold block">{!! $expertise['name'] !!}</span>
+                    <p class="mb-0 text-white">Binnen {!! $expertise['response_time'] !!} reactie</p>
+                  </div>
+                @endforeach
+              @endif 
             </div>
           </div>
           <div class="pt-12">
@@ -116,19 +125,21 @@
                       </tr>
                   </thead>
                   <tbody class="expertise-table">
-                      @foreach (get_field('expertise') as $expertise)
-                        <tr class="border-bhover:bg-gray-50">
-                          <th scope="row" class="py-4 px-6 whitespace-nowrap font-normal">
-                            {!! $expertise['name'] !!}
-                          </th>
-                          <td class="py-4 px-6">
-                            {!! $expertise['description'] !!}
-                          </td>
-                          <td class="py-4 px-6 min-w-[150px]">
-                            €{!! $expertise['price'] !!},- p/u
-                          </td>
-                      </tr>
-                      @endforeach
+                      @if (get_field('expertise'))
+                        @foreach (get_field('expertise') as $expertise)
+                          <tr class="border-bhover:bg-gray-50">
+                            <th scope="row" class="py-4 px-6 whitespace-nowrap font-normal">
+                              {!! $expertise['name'] !!}
+                            </th>
+                            <td class="py-4 px-6">
+                              {!! $expertise['description'] !!}
+                            </td>
+                            <td class="py-4 px-6 min-w-[150px]">
+                              €{!! $expertise['price'] !!},- p/u
+                            </td>
+                        </tr>
+                        @endforeach
+                      @endif
                   </tbody>
               </table>
             </div>
@@ -146,11 +157,13 @@
           <div class="pt-12">
             <h2 class="text-xl lg:text-2xl font-medium">Impressie</h2>
             <div class="grid grid-cols-3 gap-8">
-              @foreach (get_field('impression') as $image)
-                <div>
-                  <img src="{!! $image['impression_image'] !!}" class="h-60 w-full object-cover rounded-md">
-                </div>
-              @endforeach
+              @if (get_field('imperssion'))
+                @foreach (get_field('impression') as $image)
+                  <div>
+                    <img src="{!! $image['impression_image'] !!}" class="h-60 w-full object-cover rounded-md">
+                  </div>
+                @endforeach 
+              @endif
             </div>
           </div>
         </div>

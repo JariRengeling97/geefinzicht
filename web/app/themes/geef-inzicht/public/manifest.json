@@ -1,0 +1,7 @@
+{
+  "app.js": "js/app.js",
+  "editor.js": "js/editor.js",
+  "images/placeholder.png": "images/placeholder.png",
+  "images/placeholder-profile.jpg": "images/placeholder-profile.jpg",
+  "images/.gitkeep": "images/.gitkeep"
+}

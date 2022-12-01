@@ -13,8 +13,10 @@
 
         foreach($experts as $expert) {
           $expertises = get_field('expertise', $expert->ID);
-          foreach($expertises as $expertise) {
-            array_push($filters, $expertise['name']);
+          if($expertises) {
+            foreach($expertises as $expertise) {
+              array_push($filters, $expertise['name']);
+            }
           }
         }
 

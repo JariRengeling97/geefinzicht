@@ -242,7 +242,8 @@
             },
             "choices": {
                 "online": "Online",
-                "offline": "Offline"
+                "offline": "Offline",
+                "onlineoffline": "Online & Offline"
             },
             "default_value": false,
             "return_format": "label",
@@ -423,5 +424,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1669563788
+    "modified": 1669658775
 }
