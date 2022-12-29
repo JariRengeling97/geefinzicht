@@ -6,6 +6,25 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
+    <div class="popup-contact fixed right-4 bottom-4 shadow-xl border-orange border-b-4 bg-white z-20 p-8 w-[425px] rounded-md">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl  lg:text-2xl font-medium mb-0">Direct contact opnemen</h2>
+          <p class="text-sm mb-0">Neem direct contact op met de expert</p>
+        </div>
+        <div class="close-popup text-right | hover:cursor-pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 popup-close">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 popup-open hidden">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>          
+        </div>
+      </div>
+      <div class="popup-form mt-3">
+        <?php echo do_shortcode('[gravityform id="1" title="false"]'); ?>
+      </div>
+    </div>
     <div class="container py-5 xl:py-10">
       <div class="flex pt-3">
         <div class="w-4/12 pr-14 relative z-10 -mt-5">
@@ -20,10 +39,10 @@
             <small class="text-black font-bold text-xs">VERLEENT HULP BIJ</small>
             <p class="text-black mb-0"> 
               <?php
-                if(get_field('expertise')) {
-                  $expertise_count = count(get_field('expertise'));
-                  foreach(get_field('expertise') as $expertise) {
-                    echo $expertise['name'];
+                if(get_field('helps_with')) {
+                  $expertise_count = count(get_field('helps_with'));
+                  foreach(get_field('helps_with') as $help) {
+                    echo $help['help'];
                     if( $expertise_count > 1) echo ', '; 
                     $expertise_count--;
                   }
@@ -87,8 +106,8 @@
           <div class="pt-12">
             <h2 class="text-xl lg:text-2xl font-medium">Expertises</h2>
             <div class="flex">
-              @if (get_field('expertise'))
-                @foreach (get_field('expertise') as $expertise)
+              @if (get_field('expertises'))
+                @foreach (get_field('expertises') as $expertise)
                   <div class="bg-secondary p-5 mr-6 text-white rounded-md">
                     <span class="uppercase font-bold block">{!! $expertise['name'] !!}</span>
                     <p class="mb-0 text-white">Binnen {!! $expertise['response_time'] !!} reactie</p>
@@ -125,17 +144,17 @@
                       </tr>
                   </thead>
                   <tbody class="expertise-table">
-                      @if (get_field('expertise'))
-                        @foreach (get_field('expertise') as $expertise)
+                      @if (get_field('possibilities_and_prices'))
+                        @foreach (get_field('possibilities_and_prices') as $possibility_and_price)
                           <tr class="border-bhover:bg-gray-50">
                             <th scope="row" class="py-4 px-6 whitespace-nowrap font-normal">
-                              {!! $expertise['name'] !!}
+                              {!! $possibility_and_price['name'] !!}
                             </th>
                             <td class="py-4 px-6">
-                              {!! $expertise['description'] !!}
+                              {!! $possibility_and_price['description'] !!}
                             </td>
                             <td class="py-4 px-6 min-w-[150px]">
-                              €{!! $expertise['price'] !!},- p/u
+                              €{!! $possibility_and_price['price'] !!},- p/u
                             </td>
                         </tr>
                         @endforeach
@@ -157,7 +176,7 @@
           <div class="pt-12">
             <h2 class="text-xl lg:text-2xl font-medium">Impressie</h2>
             <div class="grid grid-cols-3 gap-8">
-              @if (get_field('imperssion'))
+              @if (get_field('impression'))
                 @foreach (get_field('impression') as $image)
                   <div>
                     <img src="{!! $image['impression_image'] !!}" class="h-60 w-full object-cover rounded-md">

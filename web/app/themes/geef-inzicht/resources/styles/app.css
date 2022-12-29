@@ -22,7 +22,17 @@ h6 {
 
 P {
   margin-bottom: 0.75rem;
+  font-size: 18px;
   color: #5e5e5e;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+.container p a {
+  color: #ffa500;
 }
 
 /* PRIMARY NAV */
@@ -45,16 +55,45 @@ P {
 }
 
 /* EXPERT FORM */
+.expert-form {
+  margin-top: 3rem;
+  padding: 37px 50px;
+  background-color: #53c4c8;
+  border-radius: 0.375rem;
+  color: white;
+}
+
+.expert-form h2 {
+  font-weight: bold;
+}
+
+.expert-form .gfield input.large, .expert-form textarea.large {
+  border: 0px!important;
+  background-color: transparent !important;
+  border-bottom: 2px solid white!important;
+}
+
+.expert-form .gform_button {
+  background-color: white !important;
+  border-color: #53c4c8 !important;
+  color: #53c4c8 !important;
+}
+
 .gfield_label {
   text-transform: uppercase;
   font-size: 0.75rem!important;
 }
 
 .gfield input.large,
-textarea.large {
+textarea.large,
+.gform_wrapper.gravity-theme .gfield select.large {
   border: 0px!important;
   background-color: #f9fafb!important;
   border-bottom: 1px solid #FF69B4 !important;
+}
+
+textarea.large {
+  height: 100px !important;
 }
 
 .button {
@@ -92,4 +131,29 @@ textarea.large {
 
 .facetwp-facet .fs-wrap .fs-label {
   padding: 0.625rem;
+}
+
+/* Blog */
+.blog h1 {
+  font-size: 36px;
+}
+
+.blog h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.blog p em {
+  font-size: 14px;
+}
+
+/* Popup contact */
+.popup-contact .gfield input.large, 
+.popup-contact textarea.large {
+  border-bottom: 2px solid #ffa500 !important;
+}
+
+.popup-contact .gform_button {
+  background-color: #FF69B4!important;
+  border-color: #FF69B4!important;
 }

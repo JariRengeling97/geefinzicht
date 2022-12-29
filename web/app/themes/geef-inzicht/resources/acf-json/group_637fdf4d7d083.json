@@ -8,7 +8,7 @@
             "name": "quote",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Hier kan de quote van de expert worden geplaatst.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -28,7 +28,7 @@
             "name": "website",
             "aria-label": "",
             "type": "link",
-            "instructions": "",
+            "instructions": "Hier kan de website URL van de expert worden geplaatst.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,7 +36,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": ""
+            "return_format": "array"
         },
         {
             "key": "field_637fdf4da4ee9",
@@ -44,7 +44,7 @@
             "name": "location",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Hier kan de locatie van de expert worden geplaatst.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -54,7 +54,7 @@
             },
             "default_value": "",
             "maxlength": "",
-            "placeholder": "",
+            "placeholder": "Amsterdam",
             "prepend": "",
             "append": ""
         },
@@ -64,7 +64,7 @@
             "name": "price",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Hier kan de minimum prijs van de expert worden geplaatst.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -74,17 +74,83 @@
             },
             "default_value": "",
             "maxlength": "",
-            "placeholder": "",
+            "placeholder": 50,
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_637fe432101aa",
-            "label": "Expertise",
-            "name": "expertise",
+            "key": "field_63976605e5eb3",
+            "label": "Expertises",
+            "name": "expertises",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Hier kunnen de expertises van de expert worden geplaatst.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Nieuwe regel",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_63976605e5eb4",
+                    "label": "Naam",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_63976605e5eb3"
+                },
+                {
+                    "key": "field_63976605e5eb5",
+                    "label": "Reactietijd",
+                    "name": "response_time",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "2 uur",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_63976605e5eb3"
+                }
+            ]
+        },
+        {
+            "key": "field_637fe432101aa",
+            "label": "Mogelijkheden & tarieven",
+            "name": "possibilities_and_prices",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Hier kunnen de mogelijkheden & tarieven van de expert worden geplaatst.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -162,11 +228,35 @@
                     "prepend": "",
                     "append": "",
                     "parent_repeater": "field_637fe432101aa"
-                },
+                }
+            ]
+        },
+        {
+            "key": "field_639762c3b135e",
+            "label": "Verleent hulp bij",
+            "name": "helps_with",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Hier kunnen de diensten waar de expert hulp bij verleent worden geplaatst.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Nieuwe regel",
+            "rows_per_page": 20,
+            "sub_fields": [
                 {
-                    "key": "field_638376c5953d9",
-                    "label": "Reactietijd",
-                    "name": "response_time",
+                    "key": "field_639762deb135f",
+                    "label": "Hulp",
+                    "name": "help",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -182,7 +272,7 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_637fe432101aa"
+                    "parent_repeater": "field_639762c3b135e"
                 }
             ]
         },
@@ -192,7 +282,7 @@
             "name": "wait_time_for_appointemnt",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Hier kan de wachttijd voor een afspraak van de expert worden geplaatst.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -212,7 +302,7 @@
             "name": "type",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Hier kan het type van de expert worden geplaatst. (Fysiek\/mentaal etc)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -232,7 +322,7 @@
             "name": "online_offline",
             "aria-label": "",
             "type": "select",
-            "instructions": "",
+            "instructions": "Hier kan het worden aangegeven of de afspraak online, offline of beide is.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -259,7 +349,7 @@
             "name": "insured",
             "aria-label": "",
             "type": "select",
-            "instructions": "",
+            "instructions": "Hier kan het worden aangegeven of de expert verzekerd is.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -285,7 +375,7 @@
             "name": "place",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Hier kan de woonplaats van de expert worden geplaatst.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -305,7 +395,7 @@
             "name": "province",
             "aria-label": "",
             "type": "select",
-            "instructions": "",
+            "instructions": "Hier kan de provincie van de expert worden geplaatst.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -341,7 +431,7 @@
             "name": "availability_location",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Hier kan de beschikbaarheid van de locatie van de expert worden geplaatst.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -361,7 +451,7 @@
             "name": "impression",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Hier kunnen afbeeldingen worden geupload om een impressie van de expert te geven.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -424,5 +514,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1669658775
+    "modified": 1670867197
 }

@@ -38,4 +38,11 @@ $(document).ready(function () {
       window.location.href = val;
     }
   });
+
+  // Toggle popup form
+  $(document).on("click", ".close-popup svg", function (e) {
+    $(".popup-form").toggleClass("hidden");
+    $(".popup-close").toggleClass("hidden");
+    $(".popup-open").toggleClass("hidden");
+  });
 });

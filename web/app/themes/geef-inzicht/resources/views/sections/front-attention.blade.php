@@ -5,7 +5,10 @@
     </div>
     <div class="mx-8 shadow-lg rounded-lg p-7 mt-[-50px] xl:mt-0 xl:w-4/12 xl:left-40 z-10 bg-white relative">
       <h1 class="text-3xl lg:text-4xl font-bold">Waar ben je naar op zoek?</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nisi deserunt nobis illo similique exercitationem, sapiente quas, tenetur ex distinctio libero dolorem hic in cum pariatur dignissimos, tempore facilis veniam?</p>
+      <p>Hoe vervelend om klachten te hebben en niet te weten wat je hier aan kunt doen. Als je
+        dat al zou willen dan zijn er zelfs soms nog enorme wachttijden. Geef Inzicht helpt
+        hulpzoekers verbinden met experts die kunnen helpen. Misschien wel vanuit expertises
+        waar je zelf niet op gekomen zou zijn.</p>
       <select id="expertises" class="border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 my-3">
         <option value="#" selected>Vind experts op basis van klachten</option>
         <?php
