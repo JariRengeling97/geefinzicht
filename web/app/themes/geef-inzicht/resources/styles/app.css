@@ -55,45 +55,16 @@ strong {
 }
 
 /* EXPERT FORM */
-.expert-form {
-  margin-top: 3rem;
-  padding: 37px 50px;
-  background-color: #53c4c8;
-  border-radius: 0.375rem;
-  color: white;
-}
-
-.expert-form h2 {
-  font-weight: bold;
-}
-
-.expert-form .gfield input.large, .expert-form textarea.large {
-  border: 0px!important;
-  background-color: transparent !important;
-  border-bottom: 2px solid white!important;
-}
-
-.expert-form .gform_button {
-  background-color: white !important;
-  border-color: #53c4c8 !important;
-  color: #53c4c8 !important;
-}
-
 .gfield_label {
   text-transform: uppercase;
   font-size: 0.75rem!important;
 }
 
 .gfield input.large,
-textarea.large,
-.gform_wrapper.gravity-theme .gfield select.large {
+textarea.large {
   border: 0px!important;
   background-color: #f9fafb!important;
   border-bottom: 1px solid #FF69B4 !important;
-}
-
-textarea.large {
-  height: 100px !important;
 }
 
 .button {
@@ -156,4 +127,41 @@ textarea.large {
 .popup-contact .gform_button {
   background-color: #FF69B4!important;
   border-color: #FF69B4!important;
+}
+
+/* Expert card */
+.expert-card .expert-card__image {
+  border-radius: 25px;
+}
+
+/* Blog card */
+.blog-card .blog-card__image {
+  border-radius: 25px;
+}
+
+/* Single blog */
+.single-blog .single-blog__container {
+  max-width: 500px;
+}
+
+.single-blog .single-blog__undertitle {
+  font-size: 14px;
+}
+
+.single-blog p {
+  font-size: 18px;
+}
+
+.single-blog i {
+  font-size: 14px;
+}
+
+/* Contact */
+.contact .contact__container {
+  max-width: 1150px;
+}
+
+/* Page */
+.page .page__container {
+  max-width: 1150px;
 }

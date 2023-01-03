@@ -9,12 +9,11 @@
       <div>
         <h3 class="text-xl lg:text-2xl mb-0">{!! $post->post_title !!}</h3>
       </div>
-      <div>
-        <span class="text-sm">Blog</span>
-      </div>
     </div>
     <div>
-      <p class="mb-0">{!! $post->post_excerpt !!}</p>
+      @if (get_field('read_time', $post->ID))
+        <small class="mb-0">{!! get_field('read_time', $post->ID) !!} leestijd</small>
+      @endif
     </div>
   </div>
 </a>

@@ -14,7 +14,7 @@
         <h3 class="text-xl lg:text-2xl mb-0">{!! $post->post_title !!}</h3>
       </div>
       <div>
-        <span class="text-sm">{!! get_field('location', $post->ID) !!} - €{!! get_field('price', $post->ID) !!},-</span>
+        <span class="text-sm">{!! get_field('location', $post->ID) !!}</span>
       </div>
     </div>
     <div>

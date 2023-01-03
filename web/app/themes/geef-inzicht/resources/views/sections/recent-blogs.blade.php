@@ -14,7 +14,7 @@
         </a>
       </div>
     </div>
-    <div class="lg:grid lg:grid-cols-2 lg:gap-8 2xl:grid-cols-4">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-8 2xl:grid-cols-3">
       @foreach ($recent_posts as $post)
         @include('components.blog-card', array('post' => $post))
       @endforeach

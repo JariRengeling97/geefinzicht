@@ -26,7 +26,7 @@ class Posts extends Composer
     {
         return [
             'posts' => $this->get_posts(-1),
-            'recent_posts' => $this->get_posts(4),
+            'recent_posts' => $this->get_posts(3),
         ];
     }
 

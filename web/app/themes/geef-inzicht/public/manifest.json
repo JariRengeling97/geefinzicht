@@ -1,11 +1,7 @@
 {
-  "app.css": "css/app.4326a0.css",
-  "app.js": "js/app.5db4c2.js",
-  "editor.css": "css/editor.31d6cf.css",
-  "editor.js": "js/editor.51a65b.js",
-  "runtime.js": "js/runtime.c9c28a.js",
-  "js/575.fb8f9f.js": "js/575.fb8f9f.js",
-  "images/placeholder.png": "images/placeholder.c8ebdf.png",
-  "images/placeholder-profile.jpg": "images/placeholder-profile.4c3de5.jpg",
-  "images/.gitkeep": "images/.gitkeep.31d6cf"
+  "app.js": "js/app.js",
+  "editor.js": "js/editor.js",
+  "images/placeholder.png": "images/placeholder.png",
+  "images/placeholder-profile.jpg": "images/placeholder-profile.jpg",
+  "images/.gitkeep": "images/.gitkeep"
 }

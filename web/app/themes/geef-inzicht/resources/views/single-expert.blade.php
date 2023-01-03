@@ -6,11 +6,11 @@
 
 @section('content')
   @while(have_posts()) @php(the_post())
-    <div class="popup-contact fixed right-4 bottom-4 shadow-xl border-orange border-b-4 bg-white z-20 p-8 w-[425px] rounded-md">
+    <div class="popup-contact fixed right-4 bottom-4 shadow-xl border-secondary border-b-4 bg-white z-20 p-8 w-[425px] rounded-md">
       <div class="flex items-center justify-between">
         <div>
           <h2 class="text-xl  lg:text-2xl font-medium mb-0">Direct contact opnemen</h2>
-          <p class="text-sm mb-0">Neem direct contact op met de expert</p>
+          <p class="text-sm mb-0">Neem direct contact op voor het plannen van een afspraak</p>
         </div>
         <div class="close-popup text-right | hover:cursor-pointer">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 popup-close">
@@ -50,10 +50,17 @@
               ?>
             </p>
           </div>
+          @if (get_field('response_time'))
+            <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
+            <div class="pt-3">
+              <small class="text-black font-bold text-xs">ANTWOORD BINNEN</small>
+              <p class="text-black mb-0">{!! get_field('response_time'); !!}</p>
+            </div>
+          @endif
           <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
           <div class="pt-3">
             <small class="text-black font-bold text-xs">WACHTTIJD VOOR AFSPRAAK</small>
-            <p class="text-black mb-0">{!! get_field('wait_time_for_appointemnt'); !!}</p>
+            <p class="text-black mb-0">Binnen {!! get_field('wait_time_for_appointemnt'); !!} reactie</p>
           </div>
           <div class="h-[1px] bg-[#ededed] w-full block mt-3"></div>
           <div class="pt-3">
@@ -110,7 +117,6 @@
                 @foreach (get_field('expertises') as $expertise)
                   <div class="bg-secondary p-5 mr-6 text-white rounded-md">
                     <span class="uppercase font-bold block">{!! $expertise['name'] !!}</span>
-                    <p class="mb-0 text-white">Binnen {!! $expertise['response_time'] !!} reactie</p>
                   </div>
                 @endforeach
               @endif 
